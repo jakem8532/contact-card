@@ -73,7 +73,7 @@ export const postDb = async (name, email, phone, profile) => {
     return results
   }
 
-  export const editDb = (id) => {
+  export const editDb = async (id) => {
     console.log('EDIT from the database', id)
 
     const contactDb = await openDB('contact_db', 1)
