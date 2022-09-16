@@ -86,4 +86,5 @@ export const postDb = async (name, email, phone, profile) => {
 
     const results = await request
     console.log('data saved to database', results)
+    
   }

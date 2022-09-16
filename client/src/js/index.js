@@ -67,13 +67,12 @@ window.addEventListener('load', function () {
   window.editCard = (e) => {
     profileId = parseInt(e.dataset.id)
 
-    let editName = e.dataset.name
-    let editEmail = e.dataset.email
-    let editPhone = e.dataset.phone
+    let name = document.getElementById('name').value
+    let phone = document.getElementById('email').value
+    let email = document.getElementById('phone').value
+    let profile = document.querySelector('input[type="radio"]:checked').value
 
-    document.getElementById('name').value = editName
-    document.getElementById('email').value = editEmail
-    document.getElementById('phone').value == editPhone
+    editDb(name, phone, email, profile)
 
     form.style.display = "block"
 
