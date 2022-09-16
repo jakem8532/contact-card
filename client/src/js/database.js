@@ -72,3 +72,18 @@ export const postDb = async (name, email, phone, profile) => {
 
     return results
   }
+
+  export const editDb = (id) => {
+    console.log('EDIT from the database', id)
+
+    const contactDb = await openDB('contact_db', 1)
+
+    const tx = contactDb.transaction('contacts', 'readwrite')
+
+    const store = tx.objectStore('contacts')
+
+    const request = store.put({ id: id, name: name, email: email, phone: phone, profile: profile })
+
+    const results = await request
+    console.log('data saved to database', results)
+  }

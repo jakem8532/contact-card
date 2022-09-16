@@ -2,7 +2,7 @@ import "./form"
 
 import { Tooltip, Toast, Popover } from "bootstrap"
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { initDb, getDb, postDb, deleteDb } from "./database"
+import { initDb, getDb, postDb, deleteD, editDb } from "./database"
 import { fetchCards } from "./cards"
 import { toggleForm, clearForm } from "./form"
 
@@ -62,4 +62,21 @@ window.addEventListener('load', function () {
     deleteDb(id)
 
     fetchCards()
+  }
+
+  window.editCard = (e) => {
+    profileId = parseInt(e.dataset.id)
+
+    let editName = e.dataset.name
+    let editEmail = e.dataset.email
+    let editPhone = e.dataset.phone
+
+    document.getElementById('name').value = editName
+    document.getElementById('email').value = editEmail
+    document.getElementById('phone').value == editPhone
+
+    form.style.display = "block"
+
+    submitBtnToUpdate = true
+
   }
